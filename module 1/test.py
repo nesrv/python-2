@@ -1,30 +1,16 @@
+class DataBase:
+    pk = 1
+    title = "Классы и объекты"
+    author = "Александр Пушкин"
+    views = 14356
+    comments = 12
 
+book1 = DataBase()
+book2 = DataBase()
+print(book1.__dict__)
+print(book1.__dict__)
+book2.title="123"
+print(book1.__dict__)
+print(book1.title)
+print(book2.title)
 
-class Reader:
-    def from_terminal():
-      return input('Введите что-нибудь: ')
-
-class Send:
-  def to_terminal(msg):
-      print(f'Послали в терминал: {msg}')
-
-
-  def send_message(msg):
-      print(f"Послали по сети: {msg}")
-
-class process:
-  def process(from_file=False, send_to=False):
-      if from_file:
-          msg = file_read()
-      else:
-          msg = from_terminal()
-          if send_to:
-              send_message(msg)
-          else:
-              to_terminal(msg)
-
-
-process()
-process(True)
-process(True, True)
-process(False, True)
