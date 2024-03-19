@@ -55,3 +55,16 @@ points = [Point(2, 7), Point(12, 7), Point(
 all_len = (point.length for point in points)
 
 print(max(all_len))
+
+
+
+# 
+def __add__(self, other):
+      if isinstance(self, Point) and isinstance(other,Point):
+          return Point(self.x + other.x, self.y + other.y)
+      else:
+          return Point(self.x + other[0], self.y + other[1])
+
+def __radd__(self, other):
+    print('__radd__')
+    return Point(self.x + other[0], self.y + other[1])
