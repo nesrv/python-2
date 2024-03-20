@@ -6,7 +6,7 @@ class IpAddress:
         self.ip = list(map(int, ip.split('.')))
 
     def show_bin_ip(self):
-        ip_address = (f'{ip:b}'.rjust(8, '0') for ip in self.ip)
+        ip_address = (f'{ip:b}'.zfill(8) for ip in self.ip)
         print(*ip_address)
 
     def __mul__(self, other):
