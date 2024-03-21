@@ -6,6 +6,7 @@ for i in product(alphabet, repeat=5):
         ap.append(i)
 print(len(ap))
 
+# =========================================================
 
 from itertools import product
 count = 0
@@ -14,6 +15,8 @@ for p in product("ПЯТНИЦА", repeat=5):
         count+=1
 print(count)
 
+
+# =========================================================
 
 alphabet = "ГОД"
 con = "ГД"
@@ -28,6 +31,7 @@ for e in arl:
 print(count)
 
 
+# =========================================================
 
 all_list = [[1, 3, 4], [6, 7, 9], [8, 10, 5]]
 print("The original lists are : " + str(all_list))
