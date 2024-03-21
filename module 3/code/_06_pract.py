@@ -48,6 +48,34 @@ res = JsonEditor(json_obj)
 print(res.edit())
 
 
+class JsonEditor:
+
+    def __init__(self, js_obj):
+        self.js_loads = json.loads(json_obj)
+        self.js_obj = []
+
+    def __edit(self):
+        for item in self.js_loads:
+            if type(item) == str:
+                self.js_obj.append(f'{item}!')
+            elif type(item) == int:
+                self.js_obj.append(item + 1)
+            elif type(item) == bool:
+                self.js_obj.append(not item)
+            elif type(item) == list:
+                self.js_obj.append(item * 2)
+            elif type(item) == dict:
+                item['newkey'] = None
+                self.js_obj.append(item)
+
+    def get_json(self):
+        self.__edit()
+        return json.dumps(self.js_obj, indent=4)
+
+
+res = JsonEditor(json_obj)
+
+print(res.get_json())
 
 
 # ===============================================================
