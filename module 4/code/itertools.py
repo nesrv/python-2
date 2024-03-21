@@ -37,3 +37,40 @@ all_list = [[1, 3, 4], [6, 7, 9], [8, 10, 5]]
 print("The original lists are : " + str(all_list))
 res = list(product(*all_list))
 print("All possible permutations are : " + str(res))
+
+
+# =========================================================
+
+from itertools import *
+
+
+class pairMaker:
+
+    def __init__(self, men=None, women=None):
+        self.men = men
+        self.women = women
+        self.pairs = []
+
+    def __call__(self, *args, **kwargs):
+        self.pairs = list(product(args[0], args[1]))
+
+    def __repr__(self):
+        return str(self.pairs)
+
+    def counter(self):
+        return len(self.pairs)
+
+men = ['Иван', 'Сергей']
+women = ['Мария', 'Анна', 'Зоя']
+#
+
+pairs = pairMaker()
+pairs(men, women)
+
+print(pairs) # ('Иван', 'Мария'), ('Иван', 'Анна'), ('Иван', 'Зоя'), ('Сергей', 'Мария'), ('Сергей', 'Анна'), ('Сергей', 'Зоя')
+print(pairs.counter()) # 6
+
+# data = tuple(product('АВЕСТ', repeat=5))
+# res = data.index(('С', 'В', 'Е', 'Т', 'А'))
+# print(res + 1)
+
