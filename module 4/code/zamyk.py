@@ -61,3 +61,15 @@ def parse(tp):
         str = list(map(int, str.split()))
         return eval(f'{tp}({str})')
     return convert
+
+
+# =========================
+
+s = "[1,2,3,4,5]"
+
+
+# res = eval('4+5*10-30')
+
+
+res = eval(s)
+print(res)
