@@ -1,5 +1,6 @@
 from time import time
-
+from functools import lru_cache
+from sys import setrecursionlimit
 
 def test_time(fn):
     def wrapper(*args, **kwargs):
@@ -44,3 +45,23 @@ print(res)
 get_delta = test_time(fib_cicle)
 res = get_delta(30)
 print(res)
+
+
+# =========================================
+# from sys import setrecursionlimit
+# from functools import lru_cache
+
+
+setrecursionlimit(3000)
+
+
+@lru_cache
+def fib_recurs(n):
+    if n == 1 or n == 2:
+        return 1
+    return fib_recurs(n - 2) + fib_recurs(n - 1)
+
+
+#
+get_delta = test_time(fib_recurs)
+res = get_delta(1000)
