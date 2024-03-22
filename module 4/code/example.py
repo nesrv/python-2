@@ -65,3 +65,25 @@ def fib_recurs(n):
 #
 get_delta = test_time(fib_recurs)
 res = get_delta(1000)
+
+
+
+# декор класса 
+
+@test_time
+class MyClass:
+    def fib_cicle(self, n):
+        a, b = 1, 1
+        i = 2
+        while i < n:
+            a, b = b, a + b
+            i += 1
+        return b
+
+
+#
+obj = MyClass()
+res = obj.fib_cicle(20)
+
+
+print(res)
