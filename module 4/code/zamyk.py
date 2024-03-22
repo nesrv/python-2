@@ -40,11 +40,24 @@ print(f(s))
 
 # =========================================================
 
-def parse(tp='list'):
-    def inner(s):
-        return (tuple, list)[tp == 'list'](map(int, s.split()))
-    return inner
+
+def parse(tp):
+  def convert(str):
+    str = map(int, str.split())
+    return list(str) if tp == 'list' else tuple(str)
+  return convert
 
 
-pr = parse(input())
-print(pr(input()))
+tip = 'list'
+s = '-5 6 8 11 0 111 -456 3'
+parser = parse(tip)
+print(parser(s))
+
+
+# ========================================================
+
+def parse(tp):
+    def convert(str):
+        str = list(map(int, str.split()))
+        return eval(f'{tp}({str})')
+    return convert
