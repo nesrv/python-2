@@ -1,3 +1,4 @@
+from itertools import cycle
 from math import factorial
 from string import ascii_lowercase, ascii_uppercase
 from random import choice, seed
@@ -38,7 +39,7 @@ for _ in range(5):
 
 
 # ========================================================
-
+# Вильсон
 
 def get_simple(n=3):
     while True:
@@ -51,3 +52,46 @@ gen = get_simple()
 print(2, end=' ')
 for _ in range(19):
     print(next(gen), end=' ')
+
+
+def infinite(lst, iterations):
+    result = ''
+    iter_lst = cycle(lst)
+    if lst:
+        for symbol in range(iterations):
+            result += str(next(iter_lst))
+    return result
+
+
+# Тесты
+print(infinite([2, 5, 8], 7))
+print(infinite([], 1000))
+print(infinite([7], 4))
+
+
+class CardDeck:
+    def __init__(self):
+        self.length = 52
+        self.index = 0
+        self.__SUITS = ['Пик', 'Бубей', 'Червей', 'Крестей']
+        self.__RANKS = [*range(2, 11), 'J', 'Q', 'K', 'A']
+
+    def __len__(self):
+        return self.length
+
+    def __next__(self):
+        if self.index >= self.length:
+            raise StopIteration
+        else:
+            suit = self.__SUITS[self.index // len(self.__RANKS)]
+            rank = self.__RANKS[self.index % len(self.__RANKS)]
+            self.index += 1
+            return f'{rank} {suit}'
+
+    def __iter__(self):
+        return self
+
+
+deck = CardDeck()
+while True:
+    print(next(deck))
