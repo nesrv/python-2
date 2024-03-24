@@ -65,6 +65,9 @@ class Country(IntEnum):
     Andorra = 376
     Angola = 244
     Antarctica = 672
+
+# получение уникальных значений перечисления
+
 country_code_list = list(map(int, Country))
 print(country_code_list)
 
