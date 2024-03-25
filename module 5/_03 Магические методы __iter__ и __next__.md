@@ -151,12 +151,12 @@ for x in fr:
 Таким образом, сформировали класс `FRange`, который воспринимается как итерируемый объект с возможностью перебора функцией `next()` или циклом for.
 
 
-```
-# from franges import frange
-# from matplotlib.mlab import frange
-# from scipy import arange
-# numpy.arange (start, stop, step)
+``` python
+from franges import frange # pip install frange-py
+from matplotlib.mlab import frange
+from scipy import arange
+from numpy import arange
+#numpy.arange (start, stop, step)
 
-# import frange (pip install frange-py )
 
 ```
