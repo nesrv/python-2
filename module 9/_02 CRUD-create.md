@@ -45,7 +45,7 @@ with Session(autoflush=False, bind=engine) as session:
 
 with Session(autoflush=False, bind=engine) as db:
     user = Person(name="Егор", age=28)
-    db.add(tom)  # добавляем в бд
+    db.add(user)  # добавляем в бд
     db.commit()  # сохраняем изменения
     print(user.id)  # можно получить установленный id
 ```
