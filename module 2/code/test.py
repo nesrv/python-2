@@ -1,7 +1,7 @@
 from math import hypot
 
-res = hypot(3,4)
-print (res)
+# res = hypot(3,4)
+# print (res)
 
 # сортировка
 
@@ -40,5 +40,35 @@ cat1 = Cat('Васька 1')
 cat2 = Cat('Васька 2')
 
 
-print(cat1, cat2)
-print([cat1, cat2])
+# print(cat1, cat2)
+# print([cat1, cat2])
+
+
+class BankAccount:
+   
+    def __init__(self, name, balance):  
+        self.name = name
+        self.balance = balance
+        
+    
+    def __add__(self, other):
+        if isinstance(other, (int, float)):
+            return self.balance + other
+        elif isinstance(other, BankAccount):
+            return self.balance + other.balance
+        
+    def __radd__(self, other):
+        return self + other
+
+    # def __str__(self) -> str:
+    #     return f"{self.name} - {self.balance} руб"
+    
+user1 = BankAccount('Иван', 100)
+user2 = BankAccount('Петр', 200)
+print(user1)
+
+print(user1+300)
+print(user1 + user2)
+print(400 + user1)
+
+
