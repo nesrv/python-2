@@ -24,3 +24,21 @@ points = [Point(2, 4), Point(7, 5), Point(5, -2), Point(0, 6), Point(-12, 0)]
 # Вариант 1
 
 # https://proproprogs.ru/python_oop/python-nasledovanie-atributy-private-i-protected
+
+
+class Cat:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self) -> str:
+        return self.name
+    
+    def __repr__(self) -> str:
+        return f'{self.name} в списке'
+
+cat1 = Cat('Васька 1')
+cat2 = Cat('Васька 2')
+
+
+print(cat1, cat2)
+print([cat1, cat2])
