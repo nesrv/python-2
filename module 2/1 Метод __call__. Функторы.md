@@ -1,7 +1,6 @@
 ## Магический метод __call__. 
 
 
-
 ```python
 class Counter:
     def __init__(self):

@@ -35,6 +35,24 @@ print(f"Число слов: {n}; первое слово: {first}")
 Заготовка для программы
 
 ```python
+class WordString:
+
+    def __init__(self, string=''):
+        ...
+
+    def __call__(self, indx):
+        ...
+
+    def __len__(self):
+        ...
+
+    @property
+    def string(self):
+        ...
+
+    @string.setter
+    def string(self, value):
+        ...
 
 
 ```
