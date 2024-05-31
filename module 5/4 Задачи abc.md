@@ -74,7 +74,7 @@ def create_linux_filedialog(title, path, exts)
 
 Подумайте, как это правильно сделать, чтобы не создавался объект самого класса, а лишь возвращался объект или класса `WindowsFileDialog`, или класса `LinuxFileDialog`.
 
-Пример использования класса (эту строчку в программе не писать):
+Пример использования класса:
 
 ```python
 dlg = FileDialogFactory('Изображения', 'd:/images/', ('jpg', 'gif', 'bmp', 'png'))

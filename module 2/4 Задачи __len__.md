@@ -21,7 +21,7 @@ words = WordString("Курс по Python ООП")
 
 `string` - для передачи и считывания строки.
 
-Пример пользования классом WordString (эти строчки в программе писать не нужно):
+Пример пользования классом WordString :
 
 ```python
 words = WordString()
