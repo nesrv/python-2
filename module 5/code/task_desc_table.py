@@ -14,17 +14,19 @@ class FloatValue:
 
 
 class Cell:
-
     value = FloatValue(0.0)
 
     def __init__(self, value=0.0):
         self.value = value
 
+    def __repr__(self):
+        return str(self.value).zfill(4)
+
 
 class TableSheet:
 
     def __init__(self, n, m):
-        self.cells = [[Cell()]*m for _ in range(n)]
+        self.cells = [[Cell()] * m for _ in range(n)]
         self.count = 1.0
 
     def create_cells(self, n):
@@ -33,9 +35,19 @@ class TableSheet:
                 self.cells[i][j] = Cell(self.count)
                 self.count += 1.0
 
+    def print(self):
+        string = 'Данные таблицы:\n' + "-" * 20 + '\n'
+        for i in range(len(self.cells)):
+            for j in range(len(self.cells[i])):
+                string += f'{self.cells[i][j]} | '
+            string += "\n"
+        return string + "-" * 20
+
 
 table = TableSheet(5, 3)
 table.create_cells(15)
+print(table.print())
+
 
 
 
