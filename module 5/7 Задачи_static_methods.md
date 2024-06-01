@@ -15,7 +15,7 @@
 Предполагается использовать класс `CardCheck` следующим образом:
 ```python
 is_number = CardCheck.check_card_number("1234-5678-9012-0000")
-is_name = CardCheck.check_name("SERGEI BALAKIREV")
+is_name = CardCheck.check_name("SERGEI SERGEEV")
 ```
 
 Для проверки допустимых символов в классе должен быть прописан атрибут:
