@@ -5,6 +5,15 @@ from random import choice, seed
 from string import *
 from random import *
 
+
+
+def get_sum(N):
+    summ = 0
+    for i in range(1, N+1):
+        summ += i
+        yield summ
+
+
 chars = ascii_lowercase + ascii_uppercase + "0123456789!?@#$*"
 
 
