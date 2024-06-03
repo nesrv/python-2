@@ -1,3 +1,27 @@
+# 2
+
+lst_1 = tuple(map(lambda x: tuple(x.split('=')), lst_in))
+lst_2 = filter(lambda x: int(x[1]) > 500, lst_1)
+
+for i in lst_2:
+    print (i[0], end=' ')
+
+
+
+
+# 3
+s1= [int(i) for i in input().split()]
+s2= [int(i) for i in input().split()]
+
+set_s = set(s1).intersection(s2)
+
+res = tuple(filter(lambda x: x%2==0, set_s))
+
+print(*sorted(res))
+
+
+
+
 string = string.split()
 res = filter(lambda s: s not in stop_list, string)
 
