@@ -9,7 +9,8 @@ for i in lst_2:
 
 
 
-# 3
+# 3 ################################
+
 s1= [int(i) for i in input().split()]
 s2= [int(i) for i in input().split()]
 
@@ -20,8 +21,32 @@ res = tuple(filter(lambda x: x%2==0, set_s))
 print(*sorted(res))
 
 
+###########################
 
 
+lst_in='''
+Иванов=лейтенант
+Петров=прапорщик
+Сидоров=капитан
+Егоров=лейтенант
+Смирнов=рядовой
+'''.strip().splitlines()
+
+
+rank = ['рядовой', 'сержант', 'старшина', 'прапорщик', 'лейтенант',
+        'капитан', 'майор', 'подполковник', 'полковник']
+
+lst = [i.split('=') for i in lst_in]
+lst = sorted(lst, key=lambda x: rank.index(x[1]))
+
+print(*lst, sep='\n')
+
+
+##########################################
+ranks = 'рядовойсержантстаршинапрапорщиклейтенанткапитанмайорподполковникполковник'
+lst.sort(key=lambda x: ranks.index(x[1]))
+
+##########################################
 string = string.split()
 res = filter(lambda s: s not in stop_list, string)
 
