@@ -1,0 +1,67 @@
+# Задача №1
+from random import randint
+
+class Coin:
+    heads = 0
+    tails = 0
+    def __init__(self):
+        self.side = None
+        
+    def flip(self):
+        if randint(0, 1):
+            self.side = 'орел'
+            Coin.heads += 1
+        else:
+            self.side = 'решка'
+            Coin.tails += 1
+    
+    @classmethod
+    def percent(cls):
+        if cls.tails | cls.heads:
+            ph = int((cls.heads/(cls.heads + cls.tails)) * 100)
+            return (ph, 100 - ph)
+        else:
+            return 'Нет монет'
+        
+    
+    def __mul__(self, other):
+        return [Coin() for coin in range(int(other))]
+
+count = input('Введи количество монеток -> ')
+lstCoin = Coin()*count
+
+for coin in lstCoin:
+    coin.flip()
+
+print(f'Процент орлов и решек {Coin.percent()}')
+
+# Задача №2
+class Car:
+    
+    def __init__(self, *args):
+        self.gas, self.capacity, self.gas_per_km = args
+        self.mileage = 0
+        
+    def fill(self, vol):
+        self.gas += vol
+        surplus = self.gas - self.capacity
+        if surplus > 0:
+            self.gas -= surplus
+            print(f'{round(surplus, 3)} лишних литров')
+    
+    def ride(self, distance):
+        if self.gas:
+            reserve = self.gas / self.gas_per_km
+            if (reserve - distance) >= 0:
+                self.gas -= self.gas_per_km * distance
+                self.mileage += distance
+                print(f'Проехали {distance} километров')
+            else:
+                self.gas -= self.gas_per_km * reserve
+                self.mileage += distance
+                print(f'Проехали {reserve} километров')
+                
+    
+car1 = Car(10, 50, 0.1)
+car1.fill(50)
+car1.ride(900)
