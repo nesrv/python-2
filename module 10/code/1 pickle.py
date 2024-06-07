@@ -41,16 +41,17 @@ class Virus:
     def __init__(self, *args, **kwds):
         print ("я вирус")
     def __call__(self, count):
-        for _ in range(count):
-            print (count, "я размножаюсь")
+        for i in range(count):
+            print (i, "я размножаюсь")
 
 virus = Virus()
+
 
 with open('pickle_virus', 'wb') as f:
     pickle.dump(virus, f)
 
 
 input_file = open('pickle_virus', 'rb') 
-funct = pickle.load(input_file)
-funct(10)
+func = pickle.load(input_file)
+func(10)
     
