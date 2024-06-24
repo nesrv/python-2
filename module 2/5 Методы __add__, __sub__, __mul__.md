@@ -1,7 +1,5 @@
 ## Методы `__add__, __sub__, __mul__`
 
-
-
 Рассмотрим далее тему магических методов для работы с остальными арифметическими операторами:
 
 ![](img/magic_methods.png)
@@ -203,7 +201,7 @@ print(baby)
 
 К примеру. 
 `
-Eq = eqil, lt = less then, gt = D
+`Eq` = eqil, `lt` = less then, `gt` = greater than, `__ge__(rhs)` = greater than or equal to rhs
 `
 
 ### Снова перегрузка операторов

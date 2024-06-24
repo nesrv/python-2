@@ -6,8 +6,7 @@ class Nikola:
             self.name = name
         else:
             self.name = f'Я не {name}, а Николай'
-            
-    	self.age = age
+        self.age = age
  
  
 # Тесты
