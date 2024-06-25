@@ -133,4 +133,3 @@ from accessify import private, protected
 ```
 
 ### Выводы
->`private` - аттавизм языков программирования
