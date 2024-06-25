@@ -1,4 +1,4 @@
-## Наследование. Атрибуты private и protected
+## Наследование. Атрибуты private и protected при наследовании
 
 как влияет режим доступа `private` и `protected` атрибутов при наследовании классов?
 
@@ -126,7 +126,7 @@ from accessify import private, protected
 Далее, нужный декоратор просто применяем к методу и он становится либо приватным (private), либо защищенным (protected):
 
 ```python
- @private
+    @private
     @classmethod
     def __verify_coord(cls, coord):
         return 0 <= coord <= 100
