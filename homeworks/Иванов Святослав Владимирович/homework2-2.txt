@@ -1,0 +1,35 @@
+class Car:
+    __gas: float
+    __capacity: float
+    __gas_per_km: float
+
+    def __init__(self, gas, capacity, gas_per_km):
+        self.__gas = gas
+        self.__capacity = capacity
+        self.__gas_per_km = gas_per_km
+        self.__ride = 0
+    def fill(self, value):
+        self.__gas += value
+        if(self.__gas > self.__capacity):
+            print("Лишнии литры", self.__gas - self.__capacity)
+            self.__gas = self.__capacity
+
+    def ride(self, km):
+        if(self.__gas >= km*self.__gas_per_km):
+            self.__gas -= self.__gas_per_km*km
+            self.__ride += km
+            print("Проехали {} км из {}. Пробег автомобиля {}".format(km, km, self.__ride))
+        else:
+            self.__ride += self.__gas * self.__gas_per_km
+            print("Проехали {} км из {}. Пробег автомобиля {}".format(self.__gas*self.__gas_per_km, km, self.__ride))
+            self.__gas = 0
+        print("Осталось {} литров в баке".format(self.__gas))
+
+
+
+car1 = Car(50, 50, 1.5)
+car1.fill(10)
+car1.ride(10)
+car1.fill(5)
+car1.ride(10)
+car1.ride(100)

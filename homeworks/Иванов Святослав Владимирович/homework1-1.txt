@@ -1,0 +1,17 @@
+class Money():
+    def __init__(self, value):
+        self.__money = value
+
+    @property
+    def money(self):
+        return self.__money
+    @money.setter
+    def money(self, value):
+        self.__money = value
+
+
+my_money = Money(100)
+your_money = Money(1000)
+
+print(my_money.money)
+print(your_money.money)

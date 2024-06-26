@@ -1,0 +1,23 @@
+import random
+class Coin:
+    def __init__(self):
+        self.side = None
+
+    def flip(self) -> None:
+        """
+        Подбрасывание монетки. # heads-орел/tails-решка
+        """
+        self.side = random.choice(["heads", "tails"]) # random: heads/tails
+
+n = int(input("input n\n"))
+tails = 0
+heads = 0
+coins = [Coin() for _ in range(n)]
+for coin in coins:
+    coin.flip()
+    if coin.side == "heads":
+        heads += 1
+    elif coin.side == "tails":
+        tails += 1
+
+print("Соотношение сторон {}%".format(100*tails/n))
