@@ -1,0 +1,11 @@
+import itertools
+
+chars = ["Г", "О", "Д"]
+words = itertools.product(chars, repeat=6)
+count = 0
+
+for word in words:
+    if word[0] != "О":
+        count += 1
+
+print(count)

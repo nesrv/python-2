@@ -1,0 +1,26 @@
+import itertools
+
+
+class PairMaker:
+
+    def __call__(self, *args, **kwargs):
+        if(len(args) < 2):
+            raise "Мало аргументов для создания пар"
+        else:
+            self.__pairs = list(itertools.product(*args))
+
+    def __repr__(self):
+       return str(self.__pairs)
+
+    def counter(self):
+        return len(self.__pairs)
+
+
+men = ['Иван', 'Сергей']
+women = ['Мария', 'Анна', 'Зоя']
+
+pairs = PairMaker()
+pairs(men, women)
+
+print(pairs) # ('Иван', 'Мария'), ('Иван', 'Анна'), ('Иван', 'Зоя'), ('Сергей', 'Мария'), ('Сергей', 'Анна'), ('Сергей', 'Зоя')
+print(pairs.counter()) # 6
